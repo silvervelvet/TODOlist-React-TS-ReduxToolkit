@@ -1,7 +1,7 @@
 import styles from './Search.module.css';
 
 const Search = () => {
-  return <section>hi</section>;
+  return <section></section>;
 };
 
 export default Search;
