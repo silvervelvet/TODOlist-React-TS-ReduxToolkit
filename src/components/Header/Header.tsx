@@ -1,3 +1,4 @@
+import ThemeToggleBtn from '../../context/ThemeToggleBtn';
 import Search from '../Search';
 import styles from './Header.module.css';
 import logo from './img/logo.svg';
@@ -17,6 +18,7 @@ const Header = () => {
         </div>
       </div>
       <Search />
+      <ThemeToggleBtn />
     </header>
   );
 };

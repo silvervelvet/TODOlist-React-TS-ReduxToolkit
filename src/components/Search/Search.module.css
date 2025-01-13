@@ -1,0 +1,29 @@
+.form_container {
+  display: flex;
+  align-items: center;
+  justify-self: flex-start;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+
+.input_group {
+  position: relative;
+  border: var(--color-blue) 1px solid;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+.search_btn_container {
+  position: absolute;
+  left: 29rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.search_btn_icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}

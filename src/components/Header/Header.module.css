@@ -1,17 +1,17 @@
 .header {
   display: flex;
-  justify-content: flex-start;
-  gap: 2rem;
+  justify-content: center;
   align-items: center;
-  padding: 2rem;
+  gap: 4rem;
+  padding: 1rem 2rem 3.2rem 2rem;
+  width: 100%;
+  position: relative;
 }
 
 .logo_container {
   position: relative;
-  max-width: 5rem;
-  max-height: 5rem;
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
 }
 
 .logo_img_container {
@@ -31,10 +31,10 @@
 .circle {
   position: absolute;
   top: 0.1rem;
-  left: -0.3rem;
+  left: -0.5rem;
   display: block;
   overflow: visible;
-  width: 7rem;
+  width: 6rem;
   font-size: 1rem;
   font-weight: 200;
   word-spacing: 0.5rem;
@@ -44,7 +44,7 @@
 }
 
 .circle path {
-    fill: none;
+  fill: none;
 }
 
 @keyframes rotateCircle {
