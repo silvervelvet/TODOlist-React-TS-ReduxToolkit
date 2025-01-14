@@ -4,10 +4,8 @@ import styles from './ListTasks.module.css';
 
 const ListTasks = () => {
   return (
-    <section>
-      <ul>
-        <Task />
-      </ul>
+    <section className={styles.list_tasks_container}>
+      <Task />
       <PaginationTasks />
     </section>
   );
