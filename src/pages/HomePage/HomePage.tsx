@@ -6,12 +6,11 @@ import styles from './HomePage.module.css';
 const HomePage = () => {
   return (
     <main className={styles.main}>
-        <NewTask />
-        <div className={styles.tabs_list_tasks_container}>
+      <NewTask />
+      <div className={styles.tabs_list_tasks_container}>
         <Tabs />
-
-          <ListTasks />
-        </div>
+        <ListTasks />
+      </div>
     </main>
   );
 };
