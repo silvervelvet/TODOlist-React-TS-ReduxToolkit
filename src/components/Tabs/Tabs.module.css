@@ -1,6 +1,5 @@
 .tabs_container {
   cursor: pointer;
-  transition: transform 0.4s ease-in-out;
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
@@ -9,14 +8,12 @@
 .tab {
   font-size: 1.2rem;
   text-transform: uppercase;
-  color: var(--color-darkblue);
+  color: var(--color-blue);
   padding: 0.5rem;
-  background-color: #fff;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
 }
 
-.tab:hover {
-  background-color: #f0f0f0;
+.tab:hover, .tab:focus {
   color: var(--color-darkblue);
-  transform: scale(1.02);
-
+  transform: scale(1.1);
 }
