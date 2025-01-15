@@ -18,6 +18,7 @@
   border-bottom: var(--color-darkblue) 1px solid;
   padding: 0.5rem 1rem;
   width: 100%;
+  color: var(--color-darkblue);
 }
 
 .search_btn_container {

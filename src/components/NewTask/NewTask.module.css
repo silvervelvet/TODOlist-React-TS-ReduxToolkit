@@ -11,6 +11,8 @@
   border-radius: 1rem;
   padding: 0.5rem 1rem;
   background-color: #fff;
+  color: var(--color-darkblue);
+  font-size: 1rem;
 }
 
 .input_newtask::placeholder {
