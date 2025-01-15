@@ -1,5 +1,6 @@
 import ListTasks from '../../components/ListTasks';
 import NewTask from '../../components/NewTask';
+import PaginationTasks from '../../components/PaginationTasks'
 import Tabs from '../../components/Tabs';
 import styles from './HomePage.module.css';
 
@@ -11,6 +12,7 @@ const HomePage = () => {
         <Tabs />
         <ListTasks />
       </div>
+      <PaginationTasks />
     </main>
   );
 };
