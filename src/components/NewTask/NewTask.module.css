@@ -13,6 +13,10 @@
   background-color: #fff;
 }
 
+.input_newtask::placeholder {
+  color: var(--color-blue);
+}
+
 .btn_add_container {
   width: 2rem;
   height: 2rem;
