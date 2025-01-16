@@ -13,7 +13,8 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.tab:hover, .tab:focus {
+.tab:hover,
+.tab:focus {
   color: var(--color-darkblue);
   transform: scale(1.1);
 }
