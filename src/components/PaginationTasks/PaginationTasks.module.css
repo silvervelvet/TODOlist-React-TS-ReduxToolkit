@@ -1,0 +1,31 @@
+.pagination_container {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pagination_btn_container {
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.icon_btn {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  color: var(--color-blue);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: transform 0.3s ease-in-out;
+}
+
+.pagination_btn_container:hover,
+.pagination_btn_container:focus,
+.icon_btn:hover,
+.icon_btn:focus {
+  color: var(--color-darkblue);
+  transform: scale(1.1);
+}

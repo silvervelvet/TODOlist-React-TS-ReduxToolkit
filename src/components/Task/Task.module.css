@@ -1,0 +1,44 @@
+.task_container {
+  position: relative;
+  border: var(--color-darkblue) solid 1px;
+  border-radius: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task_container:hover {
+  cursor: pointer;
+}
+
+.task_description {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--color-darkblue);
+}
+
+.btn_favorite_container {
+  position: absolute;
+  top: -1.1rem;
+  left: -0.5rem;
+  max-width: 1.8rem;
+  max-height: 1.8rem;
+}
+
+.btn_favorite_icon, .btn_icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.btn_container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  max-width: 1.8rem;
+  max-height: 1.8rem;
+}

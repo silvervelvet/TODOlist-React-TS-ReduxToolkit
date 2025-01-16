@@ -1,0 +1,11 @@
+.btn_toggle_container {
+  justify-self: flex-end;
+  max-width: 2rem;
+  max-height: 2rem;
+}
+
+.btn_toggle_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
