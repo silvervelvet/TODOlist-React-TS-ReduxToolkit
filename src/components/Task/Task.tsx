@@ -1,7 +1,7 @@
 import styles from './Task.module.css';
 import icon_favourite from './img/icon_favourite.png';
 import icon_done from './img/icon_done.png';
-import icon_delete from './img/icon_delete.png'
+import icon_delete from './img/icon_delete.png';
 
 const Task = () => {
   return (
@@ -21,7 +21,11 @@ const Task = () => {
           <img className={styles.btn_icon} src={icon_done} alt="icon_done" />
         </button>
         <button className={styles.btn}>
-          <img className={styles.btn} src={icon_delete} alt="icon_delete" />
+          <img
+            className={styles.btn_icon}
+            src={icon_delete}
+            alt="icon_delete"
+          />
         </button>
       </div>
     </div>
