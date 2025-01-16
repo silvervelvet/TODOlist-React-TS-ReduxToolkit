@@ -9,7 +9,7 @@ export interface TaskType {
 
 export const todoApi = createApi({
   reducerPath: 'todoApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/todos' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000' }),
   endpoints: (builder) => ({
     getTodos: builder.query<TaskType[], void>({
       query: () => 'todos',
