@@ -2,8 +2,13 @@ import styles from './Task.module.css';
 import icon_favourite from './img/icon_favourite.png';
 import icon_done from './img/icon_done.png';
 import icon_delete from './img/icon_delete.png';
+import { TaskType } from '../../services/todoApi';
 
-const Task = () => {
+interface TaskProps {
+  todo:TaskType
+}
+
+const Task: React.FC<TaskProps> = ({ todo }) => {
   return (
     <div className={styles.task_container}>
       <button className={styles.btn_favorite_container}>
@@ -14,7 +19,7 @@ const Task = () => {
         />
       </button>
       <div className={styles.task_description}>
-        Mnput type="text" placeholder="Enter task"{' '}
+        {todo.description}
       </div>
       <div className={styles.btn_container}>
         <button className={styles.btn}>
