@@ -27,10 +27,16 @@
   max-height: 1.8rem;
 }
 
-.btn_favorite_icon, .btn_icon {
+.btn_favorite_icon,
+.btn_icon {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn_favorite_container:hover .btn_favorite_icon {
+  transform: scale(1.1);
 }
 
 .btn_container {
@@ -41,4 +47,8 @@
 .btn {
   max-width: 1.8rem;
   max-height: 1.8rem;
+}
+
+.btn:hover .btn_icon {
+  transform: scale(1.1);
 }

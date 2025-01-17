@@ -16,16 +16,22 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  color: var(--color-blue);
-  font-size: 1rem;
-  font-weight: 500;
   transition: transform 0.3s ease-in-out;
 }
 
+.num_btn {
+  color: var(--color-blue);
+}
+
+.pagination_btn_container:hover .icon_btn,
+.pagination_btn_container:focus .icon_btn,
 .pagination_btn_container:hover,
-.pagination_btn_container:focus,
-.icon_btn:hover,
-.icon_btn:focus {
+.pagination_btn_container:focus {
+  transform: scale(1.1);
+}
+
+.num_btn:hover,
+.num_btn:focus {
   color: var(--color-darkblue);
   transform: scale(1.1);
 }

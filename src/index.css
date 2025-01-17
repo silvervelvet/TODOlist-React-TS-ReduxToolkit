@@ -3,8 +3,6 @@
   --color-blue: #96add6;
   --color-darkred: #e85234;
   --color-red: #f9b8af;
-
-  /* --font-title: 'Poppins', sans-serif; */
 }
 
 *,
@@ -21,7 +19,7 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: var(--color-darkblue); 
+  color: var(--color-darkblue);
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
