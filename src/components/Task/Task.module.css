@@ -52,3 +52,7 @@
 .btn:hover .btn_icon {
   transform: scale(1.1);
 }
+
+.task_description_done {
+  text-decoration: line-through;
+}
