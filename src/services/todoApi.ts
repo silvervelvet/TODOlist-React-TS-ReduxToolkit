@@ -27,7 +27,17 @@ export const todoApi = createApi({
         method: 'DELETE',
       }),
     }),
+    updateTodoStatus: builder.mutation<TaskType, { id: string, status: 'todo' | 'isActive' | 'isDone' }>({
+      query: ({ id, status }) => ({
+        url: `todos/${id}`,
+        method: 'PATCH',
+        body: { status },
+      }),
+    }),
   }),
 });
 
-export const { useGetTodosQuery, useAddTodoMutation, useDeleteTodoMutation } = todoApi;
+export const { useGetTodosQuery, useAddTodoMutation, useDeleteTodoMutation, useUpdateTodoStatusMutation } = todoApi;
+
+
+

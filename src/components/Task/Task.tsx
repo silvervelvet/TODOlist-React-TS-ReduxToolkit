@@ -1,15 +1,21 @@
 import styles from './Task.module.css';
 import icon_favourite from './img/icon_favourite.png';
 import icon_done from './img/icon_done.png';
+import icon_nodone from './img/icon_nodone.png';
 import icon_delete from './img/icon_delete.png';
-import { TaskType, useDeleteTodoMutation } from '../../services/todoApi';
+import {
+  TaskType,
+  useDeleteTodoMutation,
+  useUpdateTodoStatusMutation,
+} from '../../services/todoApi';
 
 interface TaskProps {
-  todo:TaskType
+  todo: TaskType;
 }
 
 const Task: React.FC<TaskProps> = ({ todo }) => {
   const [deleteTodo] = useDeleteTodoMutation();
+  const [updateTodoStatus] = useUpdateTodoStatusMutation();
 
   const handleDelete = async () => {
     try {
@@ -18,6 +24,20 @@ const Task: React.FC<TaskProps> = ({ todo }) => {
       console.error('Error deleting task:', error);
     }
   };
+
+  const handleStatusChange = async () => {
+    const newStatus = todo.status === 'todo' ? 'isDone' : 'todo';
+    try {
+      await updateTodoStatus({ id: todo.id, status: newStatus }).unwrap();
+    } catch (error) {
+      console.error('Error updating task status:', error);
+    }
+  };
+
+  const toggleTaskDescriptionClass =
+    todo.status === 'isDone' && styles.task_description_done;
+
+  const doneIconSrc = todo.status === 'isDone' ? icon_done : icon_nodone;
 
   return (
     <div className={styles.task_container}>
@@ -28,12 +48,18 @@ const Task: React.FC<TaskProps> = ({ todo }) => {
           alt="icon_favourite"
         />
       </button>
-      <div className={styles.task_description}>
+      <div
+        className={`${styles.task_description} ${toggleTaskDescriptionClass}`}
+      >
         {todo.description}
       </div>
-      <div className={styles.btn_container}>
+      <div className={styles.btn_container} onClick={handleStatusChange}>
         <button className={styles.btn}>
-          <img className={styles.btn_icon} src={icon_done} alt="icon_done" />
+          <img
+            className={styles.btn_icon}
+            src={doneIconSrc}
+            alt="icon_status"
+          />
         </button>
         <button className={styles.btn} onClick={handleDelete}>
           <img
