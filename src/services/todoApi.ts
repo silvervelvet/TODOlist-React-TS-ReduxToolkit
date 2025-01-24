@@ -34,10 +34,17 @@ export const todoApi = createApi({
         body: { status },
       }),
     }),
+    updateTodoFavourite: builder.mutation<TaskType, { id: string, isFavourites: boolean }>({
+      query: ({ id, isFavourites }) => ({
+        url: `todos/${id}`,
+        method: 'PATCH',
+        body: { isFavourites },
+      }),
+    }),
   }),
 });
 
-export const { useGetTodosQuery, useAddTodoMutation, useDeleteTodoMutation, useUpdateTodoStatusMutation } = todoApi;
+export const { useGetTodosQuery, useAddTodoMutation, useDeleteTodoMutation, useUpdateTodoStatusMutation, useUpdateTodoFavouriteMutation } = todoApi;
 
 
 
