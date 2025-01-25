@@ -12,10 +12,3 @@
   justify-content: flex-start;
   gap: 2.5rem;
 }
-
-.tabs_list_tasks_container {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  width: 100%;
-}

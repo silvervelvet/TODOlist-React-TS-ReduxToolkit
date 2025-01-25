@@ -18,3 +18,9 @@
   color: var(--color-darkblue);
   transform: scale(1.1);
 }
+
+.tab.active {
+  color: var(--color-darkblue);
+  font-weight: 400;
+  border-bottom: 2px solid var(--color-darkblue);
+}
