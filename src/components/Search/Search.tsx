@@ -1,19 +1,37 @@
+import { useState } from 'react';
 import styles from './Search.module.css';
 
 import icon_search from './img/icon_search.png';
+import { useSearchContext } from '../../context/SearchContext';
+import { debounce } from 'lodash';
 
-const Search = () => {
+const Search: React.FC = () => {
+  const [inputValue, setInputValue] = useState('');
+  const { setQuery } = useSearchContext();
+
+  const debounceSetQuery = debounce((query: string) => {
+    setQuery(query);
+  }, 3000);
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setInputValue(value);
+    debounceSetQuery(value);
+  };
+
   return (
-    <form className={styles.form_container}>
+    <div className={styles.search_container}>
       <input
         className={styles.input_group}
         type="text"
         placeholder="Search tasks..."
+        value={inputValue}
+        onChange={handleInputChange}
       ></input>
-      <button type="submit" className={styles.search_btn_container}>
-        <img src={icon_search} className={styles.search_btn_icon} />
-      </button>
-    </form>
+      <div className={styles.search_icon_container}>
+        <img src={icon_search} className={styles.search_icon} />
+      </div>
+    </div>
   );
 };
 
