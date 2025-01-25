@@ -1,6 +1,5 @@
 import ListTasks from '../../components/ListTasks';
 import NewTask from '../../components/NewTask';
-import PaginationTasks from '../../components/PaginationTasks';
 import styles from './HomePage.module.css';
 
 const HomePage = () => {
@@ -8,7 +7,6 @@ const HomePage = () => {
     <main className={styles.main}>
       <NewTask />
       <ListTasks />
-      <PaginationTasks />
     </main>
   );
 };
