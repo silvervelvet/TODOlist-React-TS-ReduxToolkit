@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useGetTodosQuery } from '../../services/todoApi';
 import Tabs from '../Tabs';
 import Task from '../Task';
@@ -7,10 +7,30 @@ import PaginationTasks from '../PaginationTasks';
 
 const ListTasks: React.FC = () => {
   const { data: todos = [], error, isLoading } = useGetTodosQuery();
-  const [activeTab, setActiveTab] = useState<
-    'all' | 'completed' | 'pending' | 'favourites'
-  >('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'completed' | 'pending' | 'favourites'>('all');
   const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    const savedPage = localStorage.getItem('currentPage');
+    const savedTab = localStorage.getItem('activeTab');
+
+    if (savedPage) {
+      setCurrentPage(Number(savedPage));
+    }
+    if (savedTab) {
+      setActiveTab(savedTab as 'all' | 'completed' | 'pending' | 'favourites');
+    }
+
+    console.log("Restored from localStorage - Page:", savedPage, "Tab:", savedTab);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('currentPage', String(currentPage));
+  }, [currentPage]);
+
+  useEffect(() => {
+    localStorage.setItem('activeTab', activeTab);
+  }, [activeTab]);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -20,7 +40,10 @@ const ListTasks: React.FC = () => {
     return <div>Error loading tasks</div>;
   }
 
+  console.log("Todos data:", todos);
+
   const filteredTodos = todos.filter((todo) => {
+    console.log("Checking Todo:", todo);
     switch (activeTab) {
       case 'completed':
         return todo.status === 'isDone';
@@ -33,12 +56,25 @@ const ListTasks: React.FC = () => {
     }
   });
 
+  console.log("Filtered Todos Length:", filteredTodos.length);
+
   const tasksPerPage = 3;
   const totalPages = Math.ceil(filteredTodos.length / tasksPerPage);
+
+  console.log("Total Pages:", totalPages);
+
+  // useEffect(() => {
+  //   if (currentPage > totalPages && totalPages > 0) {
+  //     setCurrentPage(totalPages);
+  //   }
+  // }, [totalPages]);
 
   const indexOfLastTask = currentPage * tasksPerPage;
   const indexOfFirstTask = indexOfLastTask - tasksPerPage;
   const currentTasks = filteredTodos.slice(indexOfFirstTask, indexOfLastTask);
+
+  console.log("Current Page:", currentPage);
+  console.log("Tasks on this page:", currentTasks);
 
   const nextPage = () => {
     if (currentPage < totalPages) {
