@@ -39,22 +39,29 @@ const Task: React.FC<TaskProps> = ({ todo }) => {
 
   const handleFavouriteToggle = async () => {
     try {
-      await updateTodoFavourite({id: todo.id, isFavourites: !todo.isFavourites}).unwrap();
+      await updateTodoFavourite({
+        id: todo.id,
+        isFavourites: !todo.isFavourites,
+      }).unwrap();
     } catch (error) {
       console.error('Error updating task favourite status:', error);
     }
-  }
+  };
 
   const toggleTaskDescriptionClass =
     todo.status === 'isDone' && styles.task_description_done;
 
   const doneIconSrc = todo.status === 'isDone' ? icon_done : icon_nodone;
 
-  const toggleIsFavouritesIconSrc = todo.isFavourites === false ? icon_nofavourite : icon_favourite;
+  const toggleIsFavouritesIconSrc =
+    todo.isFavourites === false ? icon_nofavourite : icon_favourite;
 
   return (
     <div className={styles.task_container}>
-      <button className={styles.btn_favorite_container} onClick={handleFavouriteToggle}>
+      <button
+        className={styles.btn_favorite_container}
+        onClick={handleFavouriteToggle}
+      >
         <img
           className={styles.btn_favorite_icon}
           src={toggleIsFavouritesIconSrc}

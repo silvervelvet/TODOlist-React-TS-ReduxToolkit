@@ -32,7 +32,10 @@ export const todoApi = createApi({
       }),
       invalidatesTags: [{ type: 'Todos', id: 'LIST' }] as TodoTag[],
     }),
-    updateTodoStatus: builder.mutation<TaskType, { id: string, status: 'todo' | 'isActive' | 'isDone' }>({
+    updateTodoStatus: builder.mutation<
+      TaskType,
+      { id: string; status: 'todo' | 'isActive' | 'isDone' }
+    >({
       query: ({ id, status }) => ({
         url: `todos/${id}`,
         method: 'PATCH',
@@ -40,7 +43,10 @@ export const todoApi = createApi({
       }),
       invalidatesTags: [{ type: 'Todos', id: 'LIST' }] as TodoTag[],
     }),
-    updateTodoFavourite: builder.mutation<TaskType, { id: string, isFavourites: boolean }>({
+    updateTodoFavourite: builder.mutation<
+      TaskType,
+      { id: string; isFavourites: boolean }
+    >({
       query: ({ id, isFavourites }) => ({
         url: `todos/${id}`,
         method: 'PATCH',
@@ -52,4 +58,10 @@ export const todoApi = createApi({
   tagTypes: ['Todos'],
 });
 
-export const { useGetTodosQuery, useAddTodoMutation, useDeleteTodoMutation, useUpdateTodoStatusMutation, useUpdateTodoFavouriteMutation } = todoApi;
+export const {
+  useGetTodosQuery,
+  useAddTodoMutation,
+  useDeleteTodoMutation,
+  useUpdateTodoStatusMutation,
+  useUpdateTodoFavouriteMutation,
+} = todoApi;

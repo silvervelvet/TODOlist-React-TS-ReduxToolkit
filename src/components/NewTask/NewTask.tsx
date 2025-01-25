@@ -37,7 +37,11 @@ const NewTask: React.FC = () => {
         value={textTask}
         onChange={(e) => setTextTask(e.target.value)}
       />
-      <button className={styles.btn_add_container} type="submit" disabled={isLoading}>
+      <button
+        className={styles.btn_add_container}
+        type="submit"
+        disabled={isLoading}
+      >
         <img className={styles.icon_btn_add} src={icon_add} alt="icon_add" />
       </button>
       {isLoading && <p>is Loading...</p>}

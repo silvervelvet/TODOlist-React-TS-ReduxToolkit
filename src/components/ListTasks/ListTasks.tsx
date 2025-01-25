@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { useGetTodosQuery } from '../../services/todoApi';
 import Tabs from '../Tabs';
 import Task from '../Task';
@@ -33,7 +33,7 @@ const ListTasks: React.FC = () => {
 
   return (
     <section className={styles.list_tasks_container}>
-      <Tabs  activeTab={activeTab} setActiveTab={setActiveTab}/>
+      <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
       {filteredTodos.length > 0 ? (
         filteredTodos.map((todo) => <Task key={todo.id} todo={todo} />)
       ) : (
