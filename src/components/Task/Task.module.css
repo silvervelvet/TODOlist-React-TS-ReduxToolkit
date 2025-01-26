@@ -1,12 +1,18 @@
 .task_container {
   position: relative;
-  border: var(--color-darkblue) solid 1px;
   border-radius: 1.5rem;
   padding: 0.5rem 1rem;
-  background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.task_container_lightTheme {
+  border: var(--color-darkblue) solid 1px;
+}
+
+.task_container_darkTheme {
+  border: var(--color-blue) solid 1px;
 }
 
 .task_container:hover {
@@ -16,7 +22,19 @@
 .task_description {
   font-weight: 400;
   font-size: 1.2rem;
+}
+
+
+.task_description_done {
+  text-decoration: line-through;
+}
+
+.task_description_lightTheme {
   color: var(--color-darkblue);
+}
+
+.task_description_darkTheme {
+  color: var(--color-blue);
 }
 
 .btn_favorite_container {
@@ -51,8 +69,4 @@
 
 .btn:hover .btn_icon {
   transform: scale(1.1);
-}
-
-.task_description_done {
-  text-decoration: line-through;
 }
