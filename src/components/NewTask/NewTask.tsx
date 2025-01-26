@@ -3,10 +3,13 @@ import { useAddTodoMutation } from '../../services/todoApi';
 import styles from './NewTask.module.css';
 import icon_add from './img/icon_add.png';
 import { v4 as uuidv4 } from 'uuid';
+import { useTheme } from '../../context/ThemeContext';
 
 const NewTask: React.FC = () => {
   const [textTask, setTextTask] = useState<string>('');
   const [addTodo, { isLoading, isError }] = useAddTodoMutation();
+
+  const { theme } = useTheme();
 
   const handleAddTask = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -31,7 +34,7 @@ const NewTask: React.FC = () => {
   return (
     <form className={styles.form_add_task_container} onSubmit={handleAddTask}>
       <input
-        className={styles.input_newtask}
+        className={`${styles.input_newtask} ${theme === 'light' ? styles.input_newtask_lightTheme : styles.input_newtask_darkTheme}`}
         type="text"
         placeholder="Add task..."
         value={textTask}
