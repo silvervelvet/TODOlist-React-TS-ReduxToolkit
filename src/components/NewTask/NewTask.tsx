@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useAddTodoMutation } from '../../services/todoApi';
 import styles from './NewTask.module.css';
-import icon_add from './img/icon_add.png';
+import icon_add_lightTheme from './img/icon_add.png';
+import icon_add_darkTheme from './img/icon_add_darkTheme.png';
 import { v4 as uuidv4 } from 'uuid';
 import { useTheme } from '../../context/ThemeContext';
 
@@ -45,7 +46,11 @@ const NewTask: React.FC = () => {
         type="submit"
         disabled={isLoading}
       >
-        <img className={styles.icon_btn_add} src={icon_add} alt="icon_add" />
+        <img
+          className={styles.icon_btn_add}
+          src={theme === 'light' ? icon_add_lightTheme : icon_add_darkTheme}
+          alt="icon_add"
+        />
       </button>
       {isLoading && <p>is Loading...</p>}
       {isError && <p>Error adding task!</p>}
