@@ -18,7 +18,14 @@
   border-bottom: var(--color-darkblue) 1px solid;
   padding: 0.5rem 1rem;
   width: 100%;
+}
+
+.input_group_lightTheme {
   color: var(--color-darkblue);
+}
+
+.input_group_darkTheme {
+  color: var(--color-darkred);
 }
 
 .search_btn_container {

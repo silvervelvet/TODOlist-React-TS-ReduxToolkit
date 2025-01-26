@@ -10,9 +10,15 @@
   border: var(--color-darkblue) solid 1.5px;
   border-radius: 1rem;
   padding: 0.5rem 1rem;
-  background-color: #fff;
-  color: var(--color-darkblue);
   font-size: 1rem;
+}
+
+.input_newtask_lightTheme {
+  color: var(--color-darkblue);
+}
+
+.input_newtask_darkTheme {
+  color: var(--color-darkred);
 }
 
 .input_newtask::placeholder {
