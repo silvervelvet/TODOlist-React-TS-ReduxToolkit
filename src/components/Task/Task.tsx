@@ -5,7 +5,7 @@ import icon_nofavourite_darkTheme from './img/icon_nofavourite_darkTheme.png';
 import icon_done from './img/icon_done.png';
 import icon_nodone from './img/icon_nodone.png';
 import icon_delete_lightTheme from './img/icon_delete.png';
-import icon_delete_darkTheme from './img/icon_delete_darkTheme.png'
+import icon_delete_darkTheme from './img/icon_delete_darkTheme.png';
 import {
   TaskType,
   useDeleteTodoMutation,
@@ -59,7 +59,9 @@ const Task: React.FC<TaskProps> = ({ todo }) => {
   const doneIconSrc = todo.status === 'isDone' ? icon_done : icon_nodone;
 
   const toggleIsFavouritesIconSrc =
-    todo.isFavourites === false ? `${theme === 'light' ? icon_nofavourite_lightTheme : icon_nofavourite_darkTheme}` : icon_favourite;
+    todo.isFavourites === false
+      ? `${theme === 'light' ? icon_nofavourite_lightTheme : icon_nofavourite_darkTheme}`
+      : icon_favourite;
 
   return (
     <div
@@ -80,9 +82,11 @@ const Task: React.FC<TaskProps> = ({ todo }) => {
         />
       </button>
       <div
-        className={`${styles.task_description} ${toggleTaskDescriptionClass} ${theme === 'light'
-        ? styles.task_description_lightTheme
-        : styles.task_description_darkTheme}`}
+        className={`${styles.task_description} ${toggleTaskDescriptionClass} ${
+          theme === 'light'
+            ? styles.task_description_lightTheme
+            : styles.task_description_darkTheme
+        }`}
       >
         {todo.description}
       </div>

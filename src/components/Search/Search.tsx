@@ -9,9 +9,7 @@ const Search = () => {
   return (
     <form className={styles.form_container}>
       <input
-        className={
-           `${styles.input_group} ${theme === 'light' ? styles.input_group_lightTheme : styles.input_group_darkTheme}`
-        }
+        className={`${styles.input_group} ${theme === 'light' ? styles.input_group_lightTheme : styles.input_group_darkTheme}`}
         type="text"
         placeholder="Search tasks..."
       ></input>
