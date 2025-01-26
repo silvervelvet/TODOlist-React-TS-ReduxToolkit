@@ -7,12 +7,19 @@ import PaginationTasks from '../PaginationTasks';
 import { useSearchContext } from '../../context/SearchContext';
 
 const ListTasks: React.FC = () => {
-  const { data: todosData = [], error: todosError, isLoading: todosLoading } = useGetTodosQuery();
+  const {
+    data: todosData = [],
+    error: todosError,
+    isLoading: todosLoading,
+  } = useGetTodosQuery();
   const { query } = useSearchContext();
 
-  const [activeTab, setActiveTab] = useState<'all' | 'completed' | 'pending' | 'favourites'>(() => {
+  const [activeTab, setActiveTab] = useState<
+    'all' | 'completed' | 'pending' | 'favourites'
+  >(() => {
     const savedTab = localStorage.getItem('activeTab');
-    return savedTab && ['all', 'completed', 'pending', 'favourites'].includes(savedTab)
+    return savedTab &&
+      ['all', 'completed', 'pending', 'favourites'].includes(savedTab)
       ? (savedTab as 'all' | 'completed' | 'pending' | 'favourites')
       : 'all';
   });
@@ -43,7 +50,9 @@ const ListTasks: React.FC = () => {
           return true;
       }
     })
-    .filter((todo) => todo.description.toLowerCase().includes(query.toLowerCase()));
+    .filter((todo) =>
+      todo.description.toLowerCase().includes(query.toLowerCase())
+    );
 
   const tasksPerPage = 3;
   const totalPages = Math.ceil(filteredTodos.length / tasksPerPage);
