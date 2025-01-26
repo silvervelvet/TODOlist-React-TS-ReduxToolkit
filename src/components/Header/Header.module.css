@@ -36,7 +36,7 @@
   overflow: visible;
   width: 6rem;
   font-size: 1rem;
-  font-weight: 200;
+  font-weight: 400;
   word-spacing: 0.5rem;
   fill: var(--color-darkred);
   animation: rotateCircle 15s linear infinite;
