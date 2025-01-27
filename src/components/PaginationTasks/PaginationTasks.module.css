@@ -31,7 +31,8 @@
 }
 
 .num_btn:hover,
-.num_btn:focus {
+.num_btn:focus,
+.num_btn.active {
   color: var(--color-darkblue);
   transform: scale(1.1);
 }

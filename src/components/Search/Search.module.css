@@ -1,4 +1,4 @@
-.form_container {
+.search_container {
   display: flex;
   align-items: center;
   justify-self: flex-start;
@@ -8,8 +8,8 @@
   transition: transform 0.4s ease-in-out;
 }
 
-.form_container:hover,
-.form_container:active {
+.search_container:hover,
+.search_container:active {
   transform: scale(1.02);
 }
 
@@ -28,7 +28,7 @@
   color: var(--color-darkred);
 }
 
-.search_btn_container {
+.search_icon_container {
   position: absolute;
   left: 29rem;
   background-color: transparent;
@@ -36,7 +36,7 @@
   cursor: pointer;
 }
 
-.search_btn_icon {
+.search_icon {
   width: 1.5rem;
   height: 1.5rem;
 }
