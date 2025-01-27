@@ -11,10 +11,12 @@
 
 .task_container_lightTheme {
   border: var(--color-darkblue) solid 1px;
+  background-color: #fff;
 }
 
 .task_container_darkTheme {
   border: var(--color-blue) solid 1px;
+  background-color: #011935;
 }
 
 .task_container:hover {
@@ -24,6 +26,10 @@
 .task_description {
   font-weight: 400;
   font-size: 1.2rem;
+  word-break: break-word;
+  white-space: normal;
+  flex-grow: 1;
+  padding-right: 5rem;
 }
 
 .task_description_done {
@@ -32,10 +38,6 @@
 
 .task_description_lightTheme {
   color: var(--color-darkblue);
-  word-break: break-word;
-  white-space: normal;
-  flex-grow: 1;
-  padding-right: 5rem;
 }
 
 .task_description_darkTheme {
