@@ -19,7 +19,7 @@ const NewTask: React.FC = () => {
       const newTask = {
         id: uuidv4(),
         description: textTask,
-        status: 'todo' as const,
+        status: 'isActive' as const,
         isFavourites: false,
       };
 

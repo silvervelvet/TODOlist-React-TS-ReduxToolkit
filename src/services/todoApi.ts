@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export interface TaskType {
   id: string;
   description: string;
-  status: 'todo' | 'isActive' | 'isDone';
+  status: 'isActive' | 'isDone';
   isFavourites?: boolean;
 }
 
@@ -34,7 +34,7 @@ export const todoApi = createApi({
     }),
     updateTodoStatus: builder.mutation<
       TaskType,
-      { id: string; status: 'todo' | 'isActive' | 'isDone' }
+      { id: string; status: 'isActive' | 'isDone' }
     >({
       query: ({ id, status }) => ({
         url: `todos/${id}`,
