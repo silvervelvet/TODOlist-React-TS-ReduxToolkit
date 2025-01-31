@@ -13,7 +13,7 @@ You can find the backend repository here:
 ## Deployment
 
 The app is deployed on GitHub Pages. You can visit the live version of the project at:
-🌟💻
+[https://silvervelvet.github.io/TODOlist-React-TS-ReduxToolkit](https://silvervelvet.github.io/TODOlist-React-TS-ReduxToolkit)🌟💻
 
 ## Features ✨
 
