@@ -1,0 +1,57 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding: 1rem 1rem 3.2rem 1rem;
+  width: 100%;
+  position: relative;
+}
+
+.logo_container {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+}
+
+.logo_img_container {
+  position: absolute;
+  top: 1rem;
+  right: -0.4rem;
+  z-index: 1;
+}
+
+.logo_img_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  top: 0.1rem;
+  left: -0.5rem;
+  display: block;
+  overflow: visible;
+  width: 6rem;
+  font-size: 1rem;
+  font-weight: 400;
+  word-spacing: 0.5rem;
+  fill: var(--color-darkred);
+  animation: rotateCircle 15s linear infinite;
+  transform-origin: center;
+}
+
+.circle path {
+  fill: none;
+}
+
+@keyframes rotateCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
