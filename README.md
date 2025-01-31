@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+# TodoList - Frontend 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **TodoList** app where users can add, remove, change task statuses, and mark tasks as favorites. 🌟  
+The project is built with **Vite**, **React**, **TypeScript**, and **RTK Query**.  
+ESLint and Prettier are used to ensure code quality and consistency.
 
-Currently, two official plugins are available:
+# Local Backend Server 🌐
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project relies on a local server to simulate a RESTful API.  **Before using the frontend application, you must first download and run this local server** to handle the data.
+You can find the backend repository here:
+👉 [TODOlist Local Server](https://github.com/silvervelvet/TODOlist-LocalServer)
 
-## Expanding the ESLint configuration
+## Deployment
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The app is deployed on GitHub Pages. You can visit the live version of the project at:
+🌟💻
 
-- Configure the top-level `parserOptions` property like this:
+## Features ✨
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Add, remove, and update tasks** 📝
+- **Mark tasks as favorites** 💖
+- **Switch between light/dark mode** 🌞🌙 using Context API for dynamic content and styles.
+- **Search functionality** 🔍 for tasks with **debounce** (using Lodash) for better performance.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Screenshots
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+![View lightTheme](images/view_lightTheme.png)
+![View darkTheme](images/view_darkTheme.png)
+![View new task](images/view_new-task.png)
+![View search](images/view_search.png)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Tech Stack 💻
+
+- **React** (v18.x)
+- **TypeScript**
+- **Vite** (for fast builds)
+- **RTK Query** (for API management)
+- **Redux Toolkit** (for state management)
+- **Lodash** (for utility functions like debounce)
+- **ESLint** & **Prettier** (for code quality)
+- **Context API** (for theme switching)
