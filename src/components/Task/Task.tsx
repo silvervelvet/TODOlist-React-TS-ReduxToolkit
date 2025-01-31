@@ -34,7 +34,7 @@ const Task: React.FC<TaskProps> = ({ todo }) => {
   };
 
   const handleStatusChange = async () => {
-    const newStatus = todo.status === 'todo' ? 'isDone' : 'todo';
+    const newStatus = todo.status === 'isDone' ? 'isDone' : 'isActive';
     try {
       await updateTodoStatus({ id: todo.id, status: newStatus }).unwrap();
     } catch (error) {
