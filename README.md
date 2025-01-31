@@ -6,7 +6,7 @@ ESLint and Prettier are used to ensure code quality and consistency.
 
 # Local Backend Server 🌐
 
-This project relies on a local server to simulate a RESTful API.  **Before using the frontend application, you must first download and run this local server** to handle the data.
+This project relies on a local server to simulate a RESTful API. **Before using the frontend application, you must first download and run this local server** to handle the data.
 You can find the backend repository here:
 👉 [TODOlist Local Server](https://github.com/silvervelvet/TODOlist-LocalServer)
 
